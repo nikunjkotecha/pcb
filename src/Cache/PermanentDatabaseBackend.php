@@ -7,9 +7,11 @@ use Drupal\Core\Cache\DatabaseBackend;
 /**
  * Defines a permanent database cache implementation.
  *
- * This cache implementation can be used for data like stock which don't really
- * need to be cleared during normal cache rebuilds and need to be cleared . It uses the database to store
- * cached data. Each cache bin corresponds to a database table by the same name.
+ * This cache implementation can be used for data like
+ * stock which don't really need to be cleared during normal
+ * cache rebuilds and need to be cleared . It uses the database to
+ * store cached data. Each cache bin corresponds to a database
+ * table by the same name.
  *
  * @ingroup cache
  */
