@@ -1,0 +1,4 @@
+services:
+  cache.backend.permanent_database:
+    class: Drupal\permanent_cache_bin\Cache\PermanentDatabaseBackendFactory
+    arguments: ['@database', '@cache_tags.invalidator.checksum']
