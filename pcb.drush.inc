@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Provides drush commands for permanent_cache_bin.
+ * Provides drush commands for pcb.
  *
  * @TODO: Test the drush command properly.
  */
@@ -10,7 +10,7 @@
 /**
  * Implements hook_drush_command().
  */
-function permanent_cache_bin_drush_command() {
+function pcb_drush_command() {
   $commands = [];
 
   $commands['permanent-cache-bin-flush'] = [

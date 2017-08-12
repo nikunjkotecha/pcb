@@ -1,0 +1,5 @@
+name: Permanent Cache Bin
+type: module
+description: 'Module for adding permanent cache bin support.'
+package: 'Cache'
+core: 8.x

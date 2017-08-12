@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\permanent_cache_bin\Cache;
+namespace Drupal\pcb\Cache;
 
 use Drupal\Core\Cache\DatabaseBackend;
 
