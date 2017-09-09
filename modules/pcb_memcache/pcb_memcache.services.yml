@@ -1,0 +1,4 @@
+services:
+  cache.backend.permanent_memcache:
+    class: Drupal\pcb_memcache\Cache\PermanentMemcacheBackendFactory
+    arguments: ['@lock', '@memcache.config', '@memcache.factory', '@cache_tags.invalidator.checksum']
