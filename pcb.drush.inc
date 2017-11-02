@@ -3,8 +3,6 @@
 /**
  * @file
  * Provides drush commands for pcb.
- *
- * @TODO: Test the drush command properly.
  */
 
 /**
@@ -19,6 +17,7 @@ function pcb_drush_command() {
     'arguments'     => [
       'bin' => 'Bin to flush cache of.',
     ],
+    'required-arguments' => TRUE,
     'examples'    => [
       'drush pcbf stock' => 'Flush stock bin cache.',
     ],
@@ -30,7 +29,12 @@ function pcb_drush_command() {
 /**
  * Implements drush permanent cache bin flush command.
  */
-function drush_permanent_cache_bin_flush($bin) {
-  \Drupal::service('cache.' . $bin)->deleteAllPermanent();
-  drush_print(dt('Deleted all cache for @bin.', ['@bin' => $bin]));
+function drush_pcb_permanent_cache_bin_flush($bin) {
+  try {
+    \Drupal::service('cache.' . $bin)->deleteAllPermanent();
+    drush_print(dt('Deleted all cache for @bin.', ['@bin' => $bin]));
+  }
+  catch (\Exception $e) {
+    drush_set_error($e->getMessage());
+  }
 }
